@@ -13,6 +13,8 @@ const browserSync = require("browser-sync").create();
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 const terser = require("gulp-terser");
+const imagemin = require("gulp-imagemin");
+
 
 function htmlTask() {
     return src("app/*.html")
@@ -41,6 +43,13 @@ function jsTask() {
 }
 
 
+function imgTask() {
+    return src("app/img/**/*.{jpg,jpeg,png,svg,gif}", {encoding: false})
+        .pipe(imagemin())
+        .pipe(dest("dist/img"))
+        .pipe(browserSync.stream());
+}
+
 function watchFiles() {
     browserSync.init({
         server: "dist",
@@ -49,12 +58,12 @@ function watchFiles() {
     watch("app/*.html", htmlTask);
     watch("app/scss/**/*.scss", scssTask);
     watch("app/js/**/*.js", jsTask);
-
+    watch("app/img/**/*.{jpg,jpeg,png,svg,gif}")
 }
 
 exports.html = htmlTask;
 exports.scss = scssTask;
 exports.js = jsTask;
+exports.img = imgTask;
 
-
-exports.default = series(htmlTask, scssTask, jsTask, watchFiles);
+exports.default = series(htmlTask, scssTask, jsTask,imgTask, watchFiles);
