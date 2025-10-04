@@ -68,9 +68,22 @@ function watchFiles() {
     watch("app/img/**/*.{jpg,jpeg,png,svg,gif}")
 }
 
+function bootstrapCSS() {
+    return src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+        .pipe(dest('dist/css'));
+}
+
+function bootstrapJS() {
+    return src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
+        .pipe(dest('dist/js'));
+}
+
 exports.html = htmlTask;
 exports.scss = scssTask;
 exports.js = jsTask;
 exports.img = imgTask;
+exports.bootstrapCSS = bootstrapCSS;
+exports.bootstrapJS = bootstrapJS;
 
-exports.default = series(htmlTask, scssTask, jsTask,imgTask, watchFiles);
+
+exports.default = series(htmlTask, scssTask, jsTask,imgTask,bootstrapCSS, bootstrapJS, watchFiles);
