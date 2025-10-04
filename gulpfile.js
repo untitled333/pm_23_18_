@@ -14,13 +14,20 @@ const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
 const terser = require("gulp-terser");
 const imagemin = require("gulp-imagemin");
+const fileInclude = require("gulp-file-include");
+
 
 
 function htmlTask() {
-    return src("app/*.html")
+    return src('app/index.html')
+        .pipe(fileInclude({
+            prefix: "@@",
+            basepath: "@file"
+        }))
         .pipe(dest("dist"))
         .pipe(browserSync.stream());
 }
+
 
 
 function scssTask() {
