@@ -1,2 +1,2 @@
-console.log("JS підключено!");
+console.log("JS ne підключено!");
 

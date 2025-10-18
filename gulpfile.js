@@ -85,5 +85,6 @@ exports.img = imgTask;
 exports.bootstrapCSS = bootstrapCSS;
 exports.bootstrapJS = bootstrapJS;
 
-
 exports.default = series(htmlTask, scssTask, jsTask,imgTask,bootstrapCSS, bootstrapJS, watchFiles);
+
+
