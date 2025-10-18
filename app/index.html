@@ -15,17 +15,27 @@
 
 <body>
 <div class="container">
-    <section>
-        @@include('html/header.html')
-    </section>
 
-    <h1> Gulp</h1>
+       <div class = 'row'>
+           @@include('html/header.html')
+       </div>
 
-    <img src="img/photo.png" alt="Фото">
 
-    <section>
-        @@include('html/footer.html')
-    </section>
+    <div class = 'row'>
+        <div class = 'col-5 left'>
+
+                @@include('html/leftfooter.html')
+
+        </div>
+
+        <div class = 'col-7 right'>
+
+                @@include('html/rightfooter.html')
+
+        </div>
+
+    </div>
+
 </div>
 
 <script src="js/bootstrap.bundle.min.js"></script>
