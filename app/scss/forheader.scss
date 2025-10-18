@@ -1,59 +1,179 @@
-@mixin flex-center($justify: center) {
+
+$primary-color: #242439;
+$secondary-color: #22222d;
+$accent-color: #f4b400;
+$text-color: #555555;
+$font-heading: "Poppins", sans-serif;
+$font-body: "Open Sans", sans-serif;
+$padding-large: 50px;
+$padding-medium: 20px;
+
+
+@mixin flex-center {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: $justify;
 }
 
-.h1{
-  font-size: 125px;
-  letter-spacing: 10px;
-  color: #242439;
-  font-weight: 700;
-}
-
-.Prof{
-  font-size: 42px;
-  color: #242439;
-  font-weight: 500;
-
-
-  width: 513px;
-  height: 55px;
-  border-radius: 10px;
-  background-color: #ffca05;
-}
-
-.title{
-  display: inline-block;
-  position: relative;
-}
-
-.title::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -20px;
-  width: 50px;
-  height: 8px;
-  background: yellow;
-}
-
-.info{
-  width: 550px;
-  height: 100px;
-  font-size: 37px;
-  line-height: 62px;
-  color: #555555;
-  font-weight: 500;
-}
 
 .photo {
-  @include flex-center(left);
+  width: 490px;
+  height: 490px;
+  object-fit: cover;
+  float: right;
+  margin-left: $padding-medium;
+}
 
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.head-p {
+  padding-left: $padding-large;
+  padding-top: 60px;
+
+  .yellow-line {
+    width: 35px;
+    height: 4px;
+    background-color: $accent-color;
+    margin: 20px 0;
+  }
+
+  .text-11, .text-12 {
+    font-size: 60px;
+    letter-spacing: 5px;
+    color: $primary-color;
+  }
+
+  .text-11 {
+    font-weight: 700;
+  }
+
+  .text-12 {
+    font-weight: 300;
+    padding-left: 10px;
+  }
+
+  .text-13 {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+
+  .text-14 {
+    font-size: 20px;
+    color: $text-color;
+  }
+
+  .text-15 {
+    @extend .text-14;
+    font-weight: 400;
+    background-color: $accent-color;
+    border-radius: 6px;
+    padding: 0 calc($padding-medium / 2);
+    display: inline-block;
   }
 }
 
+
+.container {
+  @include flex-center;
+  flex-direction: column;
+}
+
+
+
+
+@media (max-width: 1200px) {
+  .photo {
+    width: 400px;
+    height: 400px;
+    margin-left: 15px;
+  }
+
+  .head-p {
+    padding-left: 40px;
+    padding-top: 50px;
+
+    .text-11, .text-12 {
+      font-size: 50px;
+    }
+
+    .text-13 {
+      font-size: 25px;
+    }
+
+    .text-14, .text-15 {
+      font-size: 18px;
+    }
+  }
+}
+
+
+@media (max-width: 992px) {
+  .photo {
+    width: 350px;
+    height: 350px;
+    float: none;
+    margin: 0 auto 20px auto;
+  }
+
+  .head-p {
+    padding-left: 30px;
+    padding-top: 40px;
+
+    .text-11, .text-12 {
+      font-size: 45px;
+    }
+
+    .text-13 {
+      font-size: 22px;
+    }
+
+    .text-14, .text-15 {
+      font-size: 16px;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .head-p {
+    padding-left: 20px;
+    padding-top: 30px;
+
+    .text-11, .text-12 {
+      font-size: 35px;
+    }
+
+    .text-13 {
+      font-size: 20px;
+    }
+
+    .text-14, .text-15 {
+      font-size: 14px;
+    }
+  }
+}
+
+
+@media (max-width: 480px) {
+  .photo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .head-p {
+    padding-left: 10px;
+    padding-top: 20px;
+
+    .text-11, .text-12 {
+      font-size: 28px;
+    }
+
+    .text-13 {
+      font-size: 18px;
+    }
+
+    .text-14, .text-15 {
+      font-size: 12px;
+    }
+  }
+}

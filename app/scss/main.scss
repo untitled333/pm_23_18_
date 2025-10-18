@@ -1,35 +1,100 @@
-$container-bg: #fff;
-$shadow-dark: rgba(0, 0, 0, 0.25);
-$shadow-light: rgba(0, 0, 0, 0.12);
-$border-color: rgba(0, 0, 0, 0.05);
-$max-width: 1100px;
-$padding-x: 60px;
-$padding-y: 45px;
-$gap: 40px;
 
-@mixin shadow($color1, $color2) {
-  box-shadow:
-          0 30px 60px $color1,
-          0 10px 22px $color2;
+$body-bg: #e9e9ea;
+$container-bg: #fff;
+$container-shadow: rgba(0, 0, 0, 0.2);
+$bottom-bg: #1b1c1e;
+$text-color: #fff;
+$text-light: #ccc;
+$accent-color: #f4b400;
+$font-main: "Poppins", sans-serif;
+$padding-bottom: 40px;
+$section-gap: 30px;
+$font-size-heading: 16px;
+$font-size-text: 14px;
+$line-height-text: 1.6;
+
+
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-main;
+}
+
+body {
+  background: $body-bg;
+  @include flex-center(row, center, flex-start);
 }
 
 .container {
-
   background: $container-bg;
-@include shadow($shadow-dark, $shadow-light);
+  width: 900px;
+  box-shadow: 0 30px 60px $container-shadow;
+  overflow: hidden;
 
-  padding: $padding-y $padding-x;
-  border: 1px solid $border-color;
-  max-width: $max-width;
-  width: 80%;
-  position: relative;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: $gap;
-  justify-content: center;
-
-  > * {
-    flex: 1 1 calc(50% - $gap / 2);
+  .bottom {
+    @include flex-center(row, flex-start, flex-start);
+    background: $bottom-bg;
+    color: $text-color;
+    padding: $padding-bottom;
   }
+
+  .section {
+    margin-bottom: $section-gap;
+
+    h3 {
+      color: $accent-color;
+      font-size: $font-size-heading;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    p, li {
+      font-size: $font-size-text;
+      line-height: $line-height-text;
+      color: $text-light;
+    }
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .container {
+    width: 800px;
+
+    .bottom { padding: 35px; }
+    .section h3 { font-size: 15px; }
+    .section p, li { font-size: 13px; }
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 700px;
+
+    .bottom { flex-direction: column; padding: 30px; }
+    .section h3 { font-size: 14px; }
+    .section p, li { font-size: 12px; }
+  }
+}
+
+@media (max-width: 768px) {
+  .container { width: 100%; }
+  .bottom { padding: 20px; }
+  .section h3 { font-size: 13px; }
+  .section p, li { font-size: 12px; }
+}
+
+@media (max-width: 480px) {
+  .bottom { padding: 15px; }
+  .section h3 { font-size: 12px; }
+  .section p, li { font-size: 11px; }
 }
