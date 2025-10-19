@@ -15,7 +15,6 @@ $padding-medium: 20px;
   align-items: center;
 }
 
-
 .photo {
   width: 490px;
   height: 490px;
@@ -77,9 +76,6 @@ $padding-medium: 20px;
   @include flex-center;
   flex-direction: column;
 }
-
-
-
 
 @media (max-width: 1200px) {
   .photo {
