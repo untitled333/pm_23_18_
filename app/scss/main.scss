@@ -1,4 +1,3 @@
-
 $body-bg: #e9e9ea;
 $container-bg: #fff;
 $container-shadow: rgba(0, 0, 0, 0.2);
@@ -20,6 +19,7 @@ $line-height-text: 1.6;
   justify-content: $justify;
   align-items: $align;
 }
+
 
 * {
   margin: 0;
@@ -97,3 +97,43 @@ body {
   .section h3 { font-size: 12px; }
   .section p, li { font-size: 11px; }
 }
+
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+
+  .col-5, .col-7 {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+
+  .col-5 > .left-bg,
+  .col-7 > .right-bg {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+
+    .col-5, .col-7 {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 10px;
+  }
+}
+
+.left-bg, .right-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+

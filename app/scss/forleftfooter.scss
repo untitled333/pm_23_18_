@@ -18,8 +18,8 @@ $padding-top: 80px;
 
 .left-bg {
   background-color: $bg-left;
-  padding-left: $padding-large;
-  padding-top: $padding-top;
+  padding-left: clamp(20px, 4vw, $padding-large);
+  padding-top: clamp(30px, 5vw, $padding-top);
 
   .yellow-line {
     width: 35px;
@@ -28,40 +28,19 @@ $padding-top: 80px;
     margin: 20px 0;
   }
 
-  .text-1 {
-    font-size: 35px;
-    text-transform: uppercase;
-    color: $text-white;
-    font-weight: 500;
-  }
-
-  .text-2 {
-    font-size: 28px;
-    text-transform: uppercase;
-    color: $text-white;
-    font-weight: 300;
-  }
-
-  .text-3 {
-    font-size: 21px;
-    color: $text-white;
-    font-weight: 400;
-  }
-
-  .text-4 {
-    font-size: 17px;
-    color: $text-white;
-    font-weight: 400;
-  }
+  .text-1 { font-size: clamp(20px, 3vw, 35px); text-transform: uppercase; color: $text-white; font-weight: 500; }
+  .text-2 { font-size: clamp(12px, 2vw, 22px); text-transform: uppercase; color: $text-white; font-weight: 300; }
+  .text-3 { font-size: clamp(14px, 2vw, 21px); color: $text-white; font-weight: 400; }
+  .text-4 { font-size: clamp(12px, 1.8vw, 17px); color: $text-white; font-weight: 400; }
 
   .EXPERTISE {
     @include flex-center(row, flex-start, center);
-    gap: 35px;
-    margin-bottom: 15px;
+    gap: clamp(20px, 3vw, 35px);
+    margin-bottom: 28px;
 
     label {
-      width: 100px;
-      font-size: 21px;
+      width: clamp(150px, 20%, 170px);
+      font-size: clamp(14px, 2vw, 21px);
       color: $text-white;
       font-weight: 600;
     }
@@ -88,323 +67,133 @@ $padding-top: 80px;
   .contact-card {
     @include flex-center(row, flex-start, flex-start);
     color: $text-white;
-    width: 500px;
+    width: clamp(250px, 60%, 500px);
+    min-height: 340px;
+    padding-top: 30px;
+
 
     .left-bar {
+      flex: 0 0 clamp(80px, 15%, 80px);
       background-color: $accent-color;
-      width: 60px;
-      height: 270px;
-      @include flex-center(column, center, center);
-      gap: 5px;
+      width: clamp(80px, 15%, 80px);
+      height: clamp(340px, 55%, 400px);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: clamp(3px, 1vw, 5px);
+
 
       .icon {
-        font-size: 28px;
+        font-size: clamp(16px, 2.5vw, 28px);
         color: black;
-        margin: 10px 0;
+        margin-top: 45px;
       }
     }
 
     .info {
-      margin-left: 20px;
+      margin-left: clamp(10px, 4vw, 20px);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 200px;
+      justify-content: flex-start;
       align-items: flex-start;
-      margin-top: 40px;
+      height:100%;
+      margin-top: 20px;
+
 
       .item {
+        margin-top: 30px;
+
         h4 {
           margin: 0;
-          font-size: 20px;
+          font-size: clamp(14px, 2vw, 20px);
           letter-spacing: 1px;
         }
 
         p {
-          margin: 0 0 0 0;
+          margin: 0;
           color: $text-light;
-          font-size: 21px;
+          font-size: clamp(12px, 2vw, 21px);
+          white-space: nowrap;
         }
       }
     }
   }
-}
 
-@media (max-width: 1200px) {
-  .left-bg {
-    padding-left: 50px;
-    padding-top: 60px;
 
-    .text-1 { font-size: 32px; }
-    .text-2 { font-size: 25px; }
-    .text-3 { font-size: 19px; }
-    .text-4 { font-size: 16px; }
-
-    .EXPERTISE label { font-size: 19px; }
-
+  @media (max-width: 992px) {
     .contact-card {
-      width: 450px;
-
-      .left-bar { height: 240px; }
-      .info .item p { font-size: 19px; }
+      flex-direction: row;
+      flex-wrap: wrap;
     }
-  }
-}
-
-@media (max-width: 992px) {
-  .left-bg {
-    padding-left: 40px;
-    padding-top: 50px;
-
-    .text-1 { font-size: 28px; }
-    .text-2 { font-size: 22px; }
-    .text-3 { font-size: 18px; }
-    .text-4 { font-size: 15px; }
-
-    .EXPERTISE label { font-size: 17px; }
-
-    .contact-card {
-      flex-direction: column;
-      width: 100%;
-
-      .left-bar { width: 100%; height: 60px; flex-direction: row; }
-      .info { margin-left: 0; margin-top: 10px; }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  .left-bg {
-    padding-left: 30px;
-    padding-top: 40px;
-
-    .text-1 { font-size: 24px; }
-    .text-2 { font-size: 20px; }
-    .text-3 { font-size: 16px; }
-    .text-4 { font-size: 14px; }
-
-    .EXPERTISE label { font-size: 15px; }
-  }
-}
-$bg-left: #292934;
-$accent-color: #ffca05;
-$text-white: #ffffff;
-$text-light: #dcdcdc;
-$font-heading: "Poppins", sans-serif;
-$font-body: "Open Sans", sans-serif;
-$padding-large: 60px;
-$padding-top: 80px;
-
-
-@mixin flex-center($direction: row, $justify: center, $align: center) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: $justify;
-  align-items: $align;
-}
-
-
-.left-bg {
-  background-color: $bg-left;
-  padding-left: $padding-large;
-  padding-top: $padding-top;
-
-  .yellow-line {
-    width: 35px;
-    height: 4px;
-    background-color: $accent-color;
-    margin: 20px 0;
-  }
-
-  .text-1 {
-    font-size: 35px;
-    text-transform: uppercase;
-    color: $text-white;
-    font-weight: 500;
-  }
-
-  .text-2 {
-    font-size: 28px;
-    text-transform: uppercase;
-    color: $text-white;
-    font-weight: 300;
-  }
-
-  .text-3 {
-    font-size: 21px;
-    color: $text-white;
-    font-weight: 400;
-  }
-
-  .text-4 {
-    font-size: 17px;
-    color: $text-white;
-    font-weight: 400;
-  }
-
-  .EXPERTISE {
-    @include flex-center(row, flex-start, center);
-    gap: 35px;
-    margin-bottom: 15px;
-
-    label {
-      width: 100px;
-      font-size: 21px;
-      color: $text-white;
-      font-weight: 600;
-    }
-  }
-
-  .slider {
-    -webkit-appearance: none;
-    width: 35%;
-    height: 5px;
-    border-radius: 0;
-    outline: none;
-    pointer-events: none;
-    background: linear-gradient(to right, $accent-color 50%, #5d5d6a 50%);
-
-    &::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 3px;
-      height: 8px;
-      background: $accent-color;
-      border: none;
-    }
-  }
-
-  .contact-card {
-    @include flex-center(row, flex-start, flex-start);
-    color: $text-white;
-    width: 500px;
 
     .left-bar {
-      background-color: $accent-color;
-      width: 60px;
-      height: 270px;
-      @include flex-center(column, center, center);
-      gap: 5px;
-
-      .icon {
-        font-size: 28px;
-        color: black;
-        margin: 10px 0;
-      }
+      width: clamp(60px, 10%, 70px);
+      height: auto;
+      flex-direction: column;
+      margin-top: 0;
     }
 
     .info {
-      margin-left: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 200px;
-      align-items: flex-start;
-      margin-top: 40px;
+      margin-left: clamp(10px, 2vw, 20px);
+      flex: 1;
+      min-width: clamp(180px, 35%, 280px);
+    }
 
-      .item {
-        h4 {
-          margin: 0;
-          font-size: 20px;
-          letter-spacing: 1px;
-        }
-
-        p {
-          margin: 0 0 0 0;
-          color: $text-light;
-          font-size: 21px;
-        }
-      }
+    .EXPERTISE {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: clamp(10px, 3vw, 20px);
     }
   }
-}
 
-@media (max-width: 1200px) {
-  .left-bg {
-    padding-left: 50px;
-    padding-top: 60px;
 
-    .text-1 { font-size: 32px; }
-    .text-2 { font-size: 25px; }
-    .text-3 { font-size: 19px; }
-    .text-4 { font-size: 16px; }
-
-    .EXPERTISE label { font-size: 19px; }
-
+  @media (max-width: 640px) {
     .contact-card {
-      width: 450px;
-
-      .left-bar { height: 240px; }
-      .info .item p { font-size: 19px; }
+      flex-direction: row;
+      flex-wrap: wrap;
     }
-  }
-}
 
-@media (max-width: 992px) {
-  .left-bg {
-    padding-left: 40px;
-    padding-top: 50px;
-
-    .text-1 { font-size: 28px; }
-    .text-2 { font-size: 22px; }
-    .text-3 { font-size: 18px; }
-    .text-4 { font-size: 15px; }
-
-    .EXPERTISE label { font-size: 17px; }
-
-    .contact-card {
+    .left-bar {
+      width: clamp(50px, 15%, 60px);
+      height: auto;
       flex-direction: column;
-      width: 100%;
+    }
 
-      .left-bar { width: 100%; height: 60px; flex-direction: row; }
-      .info { margin-left: 0; margin-top: 10px; }
+    .info {
+      margin-left: clamp(10px, 2vw, 15px);
+      flex: 1;
+      min-width: clamp(150px, 40%, 220px);
+    }
+
+    .EXPERTISE {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: clamp(8px, 3vw, 16px);
     }
   }
-}
 
-@media (max-width: 768px) {
-  .left-bg {
-    padding-left: 30px;
-    padding-top: 40px;
 
-    .text-1 { font-size: 24px; }
-    .text-2 { font-size: 20px; }
-    .text-3 { font-size: 16px; }
-    .text-4 { font-size: 14px; }
+  @media (max-width: 480px) {
+    .contact-card {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
 
-    .EXPERTISE label { font-size: 15px; }
-  }
-}
+    .left-bar {
+      width: clamp(45px, 20%, 50px);
+      height: auto;
+      flex-direction: column;
+    }
 
-@media (max-width: 480px) {
-  .left-bg {
-    padding-left: 20px;
-    padding-top: 30px;
+    .info {
+      margin-left: clamp(8px, 2vw, 12px);
+      flex: 1;
+      min-width: clamp(120px, 50%, 200px);
+    }
 
-    .text-1 { font-size: 20px; }
-    .text-2 { font-size: 18px; }
-    .text-3 { font-size: 14px; }
-    .text-4 { font-size: 12px; }
-
-    .EXPERTISE label { font-size: 13px; }
-
-    .contact-card .left-bar { height: 50px; }
-    .contact-card .info .item p { font-size: 12px; }
-  }
-}
-
-@media (max-width: 480px) {
-  .left-bg {
-    padding-left: 20px;
-    padding-top: 30px;
-
-    .text-1 { font-size: 20px; }
-    .text-2 { font-size: 18px; }
-    .text-3 { font-size: 14px; }
-    .text-4 { font-size: 12px; }
-
-    .EXPERTISE label { font-size: 13px; }
-
-    .contact-card .left-bar { height: 50px; }
-    .contact-card .info .item p { font-size: 12px; }
+    .EXPERTISE {
+      gap: clamp(6px, 2.5vw, 14px);
+    }
   }
 }

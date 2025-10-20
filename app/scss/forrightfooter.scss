@@ -29,25 +29,25 @@ $padding-top-lg: 80px;
   }
 
   .text-5 {
-    font-size: 34px; // 25 * 1.35
+    font-size: 34px;
     text-transform: uppercase;
     color: $text-white;
     font-weight: 600;
   }
 
   .text-6 {
-    font-size: 31px; // 23 * 1.35
+    font-size: 31px;
     color: $text-white;
   }
 
   .text-7 {
-    font-size: 24px; // 18 * 1.35
+    font-size: 24px;
     color: $text-white;
     margin-left: 10px;
   }
 
   .text-8, .text-10 {
-    font-size: 20px; // 17 * 1.35
+    font-size: 20px;
     color: $text-dark;
     font-weight: 400;
     background-color: $accent-color;
@@ -59,23 +59,26 @@ $padding-top-lg: 80px;
   .text-10 { padding: 0px 10px; }
 
   .text-9 {
-    font-size: 24px; // 18 * 1.35
+    font-size: 24px;
     color: $text-white;
   }
 
   .icons-container {
     @include flex-center(row, flex-start, center);
-    gap: 50px;
+    gap: 80px;
     background-color: $bg-right;
-    padding: 55px 0;
+    padding: 31px 0;
+
 
     .icon-block {
       text-align: center;
       color: $accent-color;
       font-family: $font-body;
+      margin-bottom: 30px;
+      margin-top: 10px;
 
       i {
-        font-size: 35px;
+        font-size: 60px;
         display: block;
         margin-bottom: 5px;
       }
@@ -88,7 +91,6 @@ $padding-top-lg: 80px;
     }
   }
 }
-
 
 @media (max-width: 1200px) {
   .right-bg {
