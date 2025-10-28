@@ -20,6 +20,7 @@ $padding-top-lg: 80px;
   background-color: $bg-right;
   padding-left: $padding-left-lg;
   padding-top: $padding-top-lg;
+  padding-right: 80px;
 
   .yellow-line {
     width: 35px;
@@ -61,6 +62,29 @@ $padding-top-lg: 80px;
   .text-9 {
     font-size: 24px;
     color: $text-white;
+  }
+
+  i.arrow {
+    padding-left: 12px;
+    margin-right: 10px;
+    font-size: 25px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    color: $text-white;
+  }
+
+  i.arrow.rotated {
+    transform: rotate(90deg);
+  }
+
+  .content-block {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .content-block.show {
+    max-height: 1000px;
   }
 
   .icons-container {

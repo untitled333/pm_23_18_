@@ -19,7 +19,7 @@
     </div>
     <div class="col-7 px-0">
         <div class="head-p">
-            <h2><strong class="text-11">Mathew</strong><span class="text-12">Smith</span></h2>
+            <h2><strong class="text-11" id="personName"></strong><span class="text-12" id="lastName"></span></h2>
             <div class="text-15">Graphic & Web Designer</div>
             <br>
             <br>
@@ -32,7 +32,6 @@
                 magna aliqua incididunt.
             </div>
         </div>
-
     </div>
 </div>
 
@@ -61,26 +60,8 @@
     <div>
         <span class="text-1">EXPERTISE</span>
         <div class="yellow-line"></div>
-        <div class="EXPERTISE">
-            <label>Photoshop</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Illustrator</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Indesign</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Word</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
-        <div class="EXPERTISE">
-            <label>Power Point</label>
-            <input type="range" min="0" max="100" value="50" class="slider" disabled>
-        </div>
+
+        <div id="EXPERTISE"></div>
     </div>
     <br>
     <br>
@@ -111,22 +92,24 @@
         </div>
         <div class="col-7 px-0">
             <div class="right-bg ">
-    <div>
-        <span class="text-5">WORK EXPERIENCE</span>
+    <div class="experience-section">
+        <span class="text-5">WORK EXPERIENCE</span><i class="arrow fa-solid fa-chevron-right"></i>
         <div class="yellow-line"></div>
-        <div>
+        <div class="content-block">
             <div class="text-6">Enter Job Position Here</div>
-            <div><span class="text-8">Present</span><span  class="text-7">Company Name/Location</span></div>
-            <div class="text-9">Lorem ipsum dolor sit amet, this is a thena consectetur<br>
-                adipisicing elit, sed do eiusmod tempor incididunt ut labore et</div>
+            <div><span class="text-8">Present</span><span class="text-7">Company Name/Location</span></div>
+            <div class="text-9">Lorem ipsum dolor sit amet, this is a thena consectetur <br>
+                adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            </div>
         </div>
         <br>
         <br>
-        <div>
+        <div class="content-block">
             <div class="text-6">Enter Job Position Here</div>
-            <div><span class="text-10">2015-2017</span><span  class="text-7">Company Name/Location</span></div>
-            <div class="text-9">Lorem ipsum dolor sit amet, this is a thena consectetur<br>
-                adipisicing elit, sed do eiusmod tempor incididunt ut labore et</div>
+            <div><span class="text-10">2015-2017</span><span class="text-7">Company Name/Location</span></div>
+            <div class="text-9">Lorem ipsum dolor sit amet, this is a thena consectetur <br>
+                adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            </div>
         </div>
     </div>
     <br>
@@ -144,11 +127,12 @@
             </div>
             <div class="col-6">
                 <div class="text-6">Jennifer S. Gavin</div>
-                <div class="text-9">Director Marix Media Itd.</div>
+                <div class="text-9">Director Marix Media limited</div>
                 <div class="text-9">Phone: +555 123 454</div>
             </div>
         </div>
     </div>
+    <br>
     <br>
     <br>
     <br>
@@ -180,6 +164,7 @@
     </div>
 </div>
 
+<script src="js/main.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,12 @@
+{
+  "firstName": "Mathew",
+  "lastName": "Smith",
+
+  "expertise": [
+    { "name": "Photoshop", "value": 80 },
+    { "name": "Illustrator", "value": 75 },
+    { "name": "InDesign", "value": 80 },
+    { "name": "Word", "value": 75 },
+    { "name": "Power Point", "value": 70 }
+  ]
+}
